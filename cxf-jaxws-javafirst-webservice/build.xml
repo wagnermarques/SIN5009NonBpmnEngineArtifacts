@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="cxf-jaxws-javafirst-webservice">
+  <property environment="env"/>
+  <property name="projectFinalFileName" value="cxf-jaxws-javafirst-webservice-1.0-SNAPSHOT.war"/>
+	<target name="copy.war.into.tomcat" >
+		<echo> ### ANT fazendo deploy do processo em : ${env.CAMUNDA_BPM_PLATFORM_DEPLOY_DIR}</echo>
+		<copy file="target/${projectFinalFileName}" todir="${env.CAMUNDA_BPM_PLATFORM_DEPLOY_DIR}" />
+	</target>
+
+
+	<target name="undeploy.war.from.tomcat" >
+		<echo> ### ANT fazendo UNdeploy do processo em :${env.CAMUNDA_BPM_PLATFORM_DEPLOY_DIR}</echo>
+		<delete file="${env.CAMUNDA_BPM_PLATFORM_DEPLOY_DIR}/${projectFinalFileName}"/>
+	</target>
+
+</project>
